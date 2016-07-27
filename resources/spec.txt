@@ -1,0 +1,19 @@
+缓存数据用户：User(name, age, bornOn, phone, email, departmentId)
+                     Department(id, name)
+
+查询条件版本1：name=xxx, age=xxx
+查询条件版本2：name like xxx, age >= xxx, age <= xxx
+查询条件版本3：name like xxx, age >= xxx, age <= xxx, bornOn >= xxx, bornOn <= xxx, email like xxx
+查询条件版本4：name like xxx, age >= xxx, age <= xxx, bornOn >= xxx, bornOn <= xxx, email like xxx，department contains [x, y, z]
+
+
+代码实现版本1：if else方式
+代码实现版本2：策略模式
+
+[
+  {field:'name',oper:'=',value:'bxiao'},
+  {field:'age',oper:'>=',value:10},
+  {field:'bornOn',oper:'>',value:'1987-10-22'},
+  {field:'departmentId',oper:'in',value:['d1','d2']}
+]
+

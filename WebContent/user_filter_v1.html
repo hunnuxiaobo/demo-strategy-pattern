@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户搜索-普通实现</title>
+<link type="text/css" href="css/custom.css" rel="stylesheet" />
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" />
+<link type="text/css" href="css/ui-lightness/jquery.multiselect.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.4.custom.min.js"></script>
+<script type="text/javascript" src="js/jquery.multiselect.min.js"></script>
+<script type="text/javascript" src="js/util.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="search-panel">
+			<form>
+				<fieldset>
+				    <legend>过滤条件</legend>
+				    <table>
+						<tr><td>帐号：</td><td><input type="text" id="account" class="long-text"/></td></tr>
+						<tr><td>名称：</td><td><input type="text" id="name" class="long-text"/></td></tr>
+						<tr><td>年龄：</td><td><input type="text" id="ageMin" class="short-text" />到<input type="text" id="ageMax" class="short-text"/></td></tr>
+						<tr><td>生日：</td><td><input type="text" id="bornMin" class="short-text" />到<input type="text" id="bornMax" class="short-text" /></td></tr>
+						<tr><td>部门：</td><td><select id="departments" multiple class="long-text"></select></td></tr>
+						<tr>
+							<td colspan="2">
+								<input class="button orange" type="reset"  value="重置"/>
+								<input class="button orange" type="button" id="bnt-search" value="搜索"/>
+							</td>
+						</tr>
+					</table>
+				</fieldset>
+			</form>
+		</div>
+		<div id="list-panel">
+			<fieldset>
+				<legend>过滤结果</legend>
+				<table id="tbl-result">
+					<tr class="tbl-header">
+						<th>帐号</th><th>名称</th><th>年龄</th><th>生日</th><th>部门</th>
+					</tr>
+				</table>
+			</fieldset>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	app.init({urlUserSearch : 'normalSearch'});
+});
+</script>
+</html>
